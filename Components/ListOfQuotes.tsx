@@ -2,7 +2,7 @@ import styled from "styled-components";
 import DeletePic from "./Images/Delete";
 
 type Quote = {
-  onDelete: (id) => void;
+  onDelete: (id: string) => void;
   quote: {
     _id: string;
     verdict: string;

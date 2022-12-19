@@ -23,7 +23,9 @@ export default function AddNewQuote({ onLogOut }: PropTypes): JSX.Element {
     getAllVerdicts();
   }, []);
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(
+    event: React.FormEvent<HTMLFormElement> & { target: HTMLFormElement }
+  ) {
     event.preventDefault();
     const { verdict, tags } = event.target as HTMLFormElement;
     const verdictValue = verdict.value;
@@ -78,7 +80,7 @@ export default function AddNewQuote({ onLogOut }: PropTypes): JSX.Element {
       <Form onSubmit={handleSubmit}>
         <Div>
           <label htmlFor="verdict">Spruch</label>
-          <textarea type="text" id="verdict" name="verdict" required />
+          <textarea id="verdict" name="verdict" required />
         </Div>
         <Div>
           <label htmlFor="tags">Tags mit Komma</label>

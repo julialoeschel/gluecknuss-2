@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const verdictSchema = new Schema({
   verdict: { type: String, required: true },
-  tags: [{ type: String, required: true }],
+  tags: [{ type: String, required: false }],
 });
 
 const Verdict =

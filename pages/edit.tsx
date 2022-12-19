@@ -7,7 +7,9 @@ import AddNewQuote from "../Components/AddNewQuote";
 export default function EditPage() {
   const [passwordCorrect, setPasswordCorrect] = useState(false);
   console.log(passwordCorrect);
-  async function handlePWSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handlePWSubmit(
+    event: React.FormEvent<HTMLFormElement> & { target: HTMLFormElement }
+  ) {
     event.preventDefault();
     const userTyped = event.target as HTMLFormElement;
     const value = userTyped.passwort.value;
