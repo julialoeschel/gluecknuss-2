@@ -2,7 +2,7 @@ import { json } from "stream/consumers";
 import dbConnect from "../../db/dbConnect";
 import Verdict from "../../db/models/Verdict";
 
-export default async function handler(req, res) {
+export default async function handler(req: any, res: any) {
   await dbConnect();
 
   if (req.method == "GET") {

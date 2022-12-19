@@ -2,7 +2,7 @@ import dbConnect from "../../db/dbConnect";
 import Passwort from "../../db/models/Passwords";
 
 //makeMyDay
-export default async function handler(req, res) {
+export default async function handler(req: any, res: any) {
   await dbConnect();
   if (req.method === "POST") {
     const passwordFromUser = req.body;
